@@ -131,6 +131,9 @@ export default function Footer() {
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
           <p>
             © {currentYear} Premium Solution. Tous droits réservés.
+            <Link href="/internal/chat">
+              <a className="ml-4 hover:text-primary">Espace interne</a>
+            </Link>
           </p>
         </div>
       </div>
