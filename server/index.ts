@@ -11,6 +11,9 @@ async function startServer() {
   const app = express();
   const server = createServer(app);
 
+  // JSON parser for API endpoints
+  app.use(express.json({ limit: "1mb" }));
+
   // Serve static files from dist/public in production
   const staticPath =
     process.env.NODE_ENV === "production"
@@ -66,6 +69,68 @@ async function startServer() {
       })
     );
   }
+
+  // Fallback BFF: chat endpoint that adapts to backend or uses OpenAI directly if configured
+  app.post("/api/chat", async (req, res) => {
+    try {
+      const { messages = [], stream = false } = req.body ?? {};
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 30000);
+
+      // Try backend /api/openai first
+      if (CHAT_API_URL) {
+        const r1 = await fetch(`${CHAT_API_URL.replace(/\/$/, "")}/api/openai`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ messages, stream }),
+          signal: controller.signal,
+        });
+        if (r1.ok) {
+          clearTimeout(timeout);
+          const data = await r1.json();
+          const reply =
+            data?.reply ?? data?.content ?? data?.choices?.[0]?.message?.content ?? "";
+          return res.status(200).json({ reply });
+        }
+        // Try alternate path /api/chat (some backends expose this)
+        const lastUser = Array.isArray(messages)
+          ? [...messages].reverse().find((m) => m?.role === "user")?.content ?? ""
+          : "";
+        const r2 = await fetch(`${CHAT_API_URL.replace(/\/$/, "")}/api/chat`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ prompt: lastUser, messages }),
+          signal: controller.signal,
+        });
+        clearTimeout(timeout);
+        if (r2.ok) {
+          const data = await r2.json();
+          const reply = data?.reply ?? data?.content ?? "";
+          return res.status(200).json({ reply });
+        }
+      }
+
+      // Fallback direct to OpenAI if OPENAI_API_KEY configured
+      const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+      if (OPENAI_API_KEY) {
+        const r = await fetch("https://api.openai.com/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            Authorization: `Bearer ${OPENAI_API_KEY}`,
+          },
+          body: JSON.stringify({ model: "gpt-4o-mini", messages, stream: false }),
+        });
+        const data = await r.json();
+        const reply = data?.choices?.[0]?.message?.content ?? "";
+        return res.status(200).json({ reply });
+      }
+
+      return res.status(502).json({ error: "Chat backend unavailable" });
+    } catch (e) {
+      return res.status(502).json({ error: "Chat request failed" });
+    }
+  });
 
   // Protect internal page path
   app.use("/internal", basicAuth);
