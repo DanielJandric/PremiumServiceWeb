@@ -117,42 +117,38 @@ export default function InternalChat() {
 												<a className="text-primary hover:underline">Voir les documents →</a>
 											</Link>
 										</div>
-										</div>
-										{/* close first grid */}
-										</div>
-
-                                    {/* Chat-only mode: no manual forms, everything via conversation */}
 									</div>
 
-                                    <div className="grid gap-4">
-                                        <div>
-                                            <div className="text-sm font-medium mb-2">Conversation</div>
-									<div className="h-[420px] overflow-y-auto rounded-[var(--radius)] border p-4 bg-card">
-										{messages.map((m, i) => (
-											<div key={i} className={`mb-3 ${m.role === "user" ? "text-foreground" : "text-muted-foreground"}`}>
-												<span className="font-medium mr-2">{m.role === "user" ? "Vous" : "Assistant"}:</span>
-												<span>{m.content}</span>
+									<div className="grid gap-4">
+										<div>
+											<div className="text-sm font-medium mb-2">Conversation</div>
+											<div className="h-[420px] overflow-y-auto rounded-[var(--radius)] border p-4 bg-card">
+												{messages.map((m, i) => (
+													<div key={i} className={`mb-3 ${m.role === "user" ? "text-foreground" : "text-muted-foreground"}`}>
+														<span className="font-medium mr-2">{m.role === "user" ? "Vous" : "Assistant"}:</span>
+														<span>{m.content}</span>
+													</div>
+												))}
+												<div ref={endRef} />
 											</div>
-										))}
-										<div ref={endRef} />
+											<div className="flex gap-3">
+												<input
+													value={input}
+													onChange={(e) => setInput(e.target.value)}
+													placeholder="Posez une question..."
+													className="flex-1 rounded-[var(--radius)] border bg-background px-3 py-2"
+													onKeyDown={(e) => {
+														if (e.key === "Enter") sendMessage();
+													}}
+												/>
+												<Button onClick={sendMessage} disabled={loading}>Envoyer</Button>
+											</div>
+											<div className="flex gap-3 pt-2">
+												<Button variant="outline" onClick={previewPdf}>Aperçu PDF</Button>
+												<Button onClick={generatePdf}>Valider et générer</Button>
+											</div>
+										</div>
 									</div>
-									<div className="flex gap-3">
-										<input
-											value={input}
-											onChange={(e) => setInput(e.target.value)}
-											placeholder="Posez une question..."
-											className="flex-1 rounded-[var(--radius)] border bg-background px-3 py-2"
-											onKeyDown={(e) => {
-												if (e.key === "Enter") sendMessage();
-											}}
-										/>
-										<Button onClick={sendMessage} disabled={loading}>Envoyer</Button>
-									</div>
-                                        <div className="flex gap-3 pt-2">
-                                            <Button variant="outline" onClick={previewPdf}>Aperçu PDF</Button>
-                                            <Button onClick={generatePdf}>Valider et générer</Button>
-                                        </div>
-                                    </div>
 								</div>
 							</CardContent>
 						</Card>
