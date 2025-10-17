@@ -31,7 +31,7 @@ export default function Home() {
   ];
 
   const stats = [
-    { label: "années d’exigence", value: "9+", icon: CheckCircle2 },
+    { label: "années d’exigence", value: "5+", icon: CheckCircle2 },
     { label: "clients accompagnés", value: "500+", icon: Users },
     { label: "missions réalisées", value: "5 000+", icon: Star },
   ];
@@ -59,7 +59,7 @@ export default function Home() {
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
               <div className="space-y-8">
                 <div className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-                  ✨ Maison fondée en 2016
+                  ✨ Maison fondée en 2020
                 </div>
                 <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
                   Nettoyage & Service de conciergerie, version Premium

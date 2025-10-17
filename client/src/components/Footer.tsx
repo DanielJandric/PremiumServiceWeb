@@ -19,7 +19,7 @@ export default function Footer() {
               <div>
                 <div className="font-bold text-foreground">Premium Solution</div>
                 <div className="text-xs text-muted-foreground">
-                  Depuis 2016
+                  Depuis 2020
                 </div>
               </div>
             </div>

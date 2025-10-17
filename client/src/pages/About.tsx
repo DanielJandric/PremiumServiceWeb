@@ -59,7 +59,7 @@ export default function About() {
                   À propos de Premium Solution
                 </h1>
                 <p className="mb-6 text-lg text-muted-foreground">
-                  Depuis 2016, nous mettons l’exigence au service de vos espaces : discrétion, ponctualité, finitions irréprochables.
+                  Depuis 2020, nous mettons l’exigence au service de vos espaces : discrétion, ponctualité, finitions irréprochables.
                 </p>
                 <p className="text-lg text-muted-foreground">
                   Née en Suisse romande, Premium Solution grandit avec une idée simple : un nettoyage premium repose sur des équipes stables, un matériel de qualité et des protocoles précis. Aujourd’hui, 500+ clients et 5 000+ interventions témoignent de la constance de notre service.
