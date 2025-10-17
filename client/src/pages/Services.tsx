@@ -12,35 +12,35 @@ export default function Services() {
       icon: Home,
       category: "Nettoyage",
       title: "Nettoyage de maison",
-      description: "Premium Solution prendra soin de votre maison de l'entrée à toute la zone de votre maison.",
-      price: "Dès 49.- CHF",
+      description: "Soin intégral des espaces de vie, avec une constance de rendu et une attention aux détails.",
+      price: "Dès CHF 49.–",
       includes: ["Jusqu'à 150 m²", "4 heures de nettoyage", "Cuisine (plan de travail, évier)", "Salle de bain"],
     },
     {
       id: "nettoyage-entretien",
       icon: Home,
       category: "Nettoyage",
-      title: "Nettoyage d'entretien",
-      description: "Premium Solution prendra soin de votre entreprise de l'entrée à toute la zone de votre entreprise.",
-      price: "Dès 250.- CHF",
+      title: "Nettoyage d’entretien (bureaux & locaux)",
+      description: "Standards élevés pour vos bureaux, zones communes et espaces clients. Interventions tôt le matin, tard le soir ou le week-end.",
+      price: "Dès CHF 250.–",
       includes: ["Jusqu'à 150 m²", "7 heures de nettoyage", "Dépoussiérer des meubles", "2 personnes pendant 5 heures"],
     },
     {
       id: "nettoyage-stores",
       icon: Wind,
       category: "Nettoyage",
-      title: "Nettoyage stores",
-      description: "Vous emménagez dans une nouvelle maison, vous déménagez dans un nouvel appartement? laissez nous nous occuper du nettoyage.",
-      price: "Dès 240.- CHF",
+      title: "Nettoyage des stores",
+      description: "Remise à neuf des stores (emménagement, déménagement, entretien annuel), respect des matériaux.",
+      price: "Dès CHF 240.–",
       includes: ["2 personnes pendant 2 heures", "Cuisine (plan de travail, évier)", "Salle de bain", "Dépoussiérer des meubles"],
     },
     {
       id: "nettoyage-fin-bail",
       icon: Home,
       category: "Nettoyage",
-      title: "Nettoyage fin de bail",
-      description: "Vous emménagez dans une nouvelle maison, vous déménagez dans un nouvel appartement? laissez nous nous occuper du nettoyage.",
-      price: "Dès 900.- CHF",
+      title: "Nettoyage de fin de bail (avec garantie 72 h)",
+      description: "Préparation complète pour l’état des lieux. Reprise offerte si une retouche est demandée sous 72 h.",
+      price: "Dès CHF 900.–",
       includes: ["Cuisine", "Salle de bain", "4 pièces", "Stores et fenêtres"],
     },
     {
@@ -48,17 +48,17 @@ export default function Services() {
       icon: Wind,
       category: "Nettoyage",
       title: "Nettoyage de rideaux",
-      description: "Premium Solution a développé un service expert pour l'entretien de vos textiles d'ameublement.",
-      price: "Dès 12.- CHF",
+      description: "Nettoyage professionnel adapté aux tissus, tenue et tombé conservés.",
+      price: "Dès CHF 35.–",
       includes: ["Rideaux en soie", "Rideaux en velours doublé", "Rideaux molletonné", "Rideaux en velours doublé"],
     },
     {
       id: "tapis-entretien",
       icon: Sparkles,
       category: "Spécialisé",
-      title: "Tapis entretien",
-      description: "Nos spécialistes allient techniques traditionnelles et soins innovants pour un nettoyage en profondeur de vos tapis.",
-      price: "Dès 38.- CHF",
+      title: "Entretien de tapis",
+      description: "Nettoyage en profondeur, hygiène maîtrisée, longévité préservée.",
+      price: "Dès CHF 39.–",
       includes: ["Tapis mécanique fin", "Tapis mécanique haute laine", "Tapis de marque, de designer", "Tapis en soie"],
     },
   ];
@@ -74,12 +74,12 @@ export default function Services() {
         <section className="bg-gradient-to-br from-accent/20 via-background to-background py-16 md:py-24">
           <div className="container text-center">
             <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              Nos services
+              Nos Services
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              À travers sa large gamme de services, Premium Solution vous propose une solution 
-              pour tous vos besoins et pour tous types de textiles.
+              Prestations de nettoyage et de conciergerie conçues pour durer : protocoles clairs, finitions nettes, suivi à la demande.
             </p>
+            <div className="mt-2 text-sm text-muted-foreground">Des solutions sur mesure</div>
           </div>
         </section>
 

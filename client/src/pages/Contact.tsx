@@ -56,8 +56,7 @@ export default function Contact() {
               Contactez-nous
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              Demandez un devis gratuit ou posez-nous vos questions. 
-              Notre équipe vous répondra dans les plus brefs délais.
+              Un besoin précis, une visite technique, une urgence ? Nous répondons rapidement et organisons selon vos contraintes.
             </p>
           </div>
         </section>
@@ -187,7 +186,7 @@ export default function Contact() {
               <div className="space-y-8">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Informations de contact</CardTitle>
+                    <CardTitle>Nos coordonnées</CardTitle>
                     <CardDescription>
                       Vous pouvez également nous contacter directement
                     </CardDescription>
@@ -200,8 +199,8 @@ export default function Contact() {
                       <div>
                         <div className="font-medium text-foreground">Adresse</div>
                         <div className="text-sm text-muted-foreground">
-                          Route de la Combaz 11<br />
-                          3963 Crans-Montana<br />
+                          Route de la Corniche 11<br />
+                          1066 Epalinges, Vaud<br />
                           Suisse
                         </div>
                       </div>
@@ -214,10 +213,10 @@ export default function Contact() {
                       <div>
                         <div className="font-medium text-foreground">Téléphone</div>
                         <a
-                          href="tel:+41766074682"
+                          href="tel:+41766074692"
                           className="text-sm text-muted-foreground hover:text-primary transition-colors"
                         >
-                          +41 76 607 46 82
+                          +41 76 607 46 92
                         </a>
                       </div>
                     </div>

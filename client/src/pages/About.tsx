@@ -59,14 +59,10 @@ export default function About() {
                   À propos de Premium Solution
                 </h1>
                 <p className="mb-6 text-lg text-muted-foreground">
-                  Nos employés font un travail fantastique et prennent soin de vos maisons dans des 
-                  conditions de travail difficiles. Leur passion pour leur travail et leur engagement 
-                  sont quelque chose que nous souhaitons mettre en valeur.
+                  Depuis 2016, nous mettons l’exigence au service de vos espaces : discrétion, ponctualité, finitions irréprochables.
                 </p>
                 <p className="text-lg text-muted-foreground">
-                  Être à la pointe de la technologie et à l'écoute des besoins de notre clientèle 
-                  nécessite un développement continu. La garantie de Premium Solution est d'apporter 
-                  le meilleur service de nettoyage et de conciergerie possible à ses clients.
+                  Née en Suisse romande, Premium Solution grandit avec une idée simple : un nettoyage premium repose sur des équipes stables, un matériel de qualité et des protocoles précis. Aujourd’hui, 500+ clients et 5 000+ interventions témoignent de la constance de notre service.
                 </p>
               </div>
               

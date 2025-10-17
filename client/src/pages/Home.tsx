@@ -10,30 +10,30 @@ export default function Home() {
     {
       icon: HomeIcon,
       title: "Nettoyage de maison",
-      description: "Nettoyage complet de votre maison ou appartement avec notre équipe professionnelle.",
-      price: "Dès 49.- CHF",
+      description: "Entretien méticuleux d’appartements et de villas, par équipes salariées et encadrées.",
+      price: "Dès CHF 49.–",
       color: "text-primary",
     },
     {
       icon: Sparkles,
-      title: "Nettoyage d'entretien",
-      description: "Service professionnel pour l'entretien régulier de votre entreprise ou de vos locaux.",
-      price: "Dès 250.- CHF",
+      title: "Nettoyage d’entretien (bureaux & locaux)",
+      description: "Propreté quotidienne, image maîtrisée, horaires flexibles avant/après ouverture.",
+      price: "Dès CHF 250.–",
       color: "text-primary",
     },
     {
       icon: Sparkles,
-      title: "Service de conciergerie",
-      description: "Gestion des espaces communs, évacuation des déchets et menus travaux adaptés à vos besoins.",
+      title: "Conciergerie d’immeuble (PPE / régies)",
+      description: "Parties communes, gestion des déchets, petites réparations, tournées planifiées.",
       price: "Sur devis",
       color: "text-primary",
     },
   ];
 
   const stats = [
-    { label: "Ans d'expérience", value: "6+", icon: CheckCircle2 },
-    { label: "Clients satisfaits", value: "500+", icon: Users },
-    { label: "Travaux complétés", value: "5K+", icon: Star },
+    { label: "années d’exigence", value: "9+", icon: CheckCircle2 },
+    { label: "clients accompagnés", value: "500+", icon: Users },
+    { label: "missions réalisées", value: "5 000+", icon: Star },
   ];
 
   const features = [
@@ -59,14 +59,13 @@ export default function Home() {
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
               <div className="space-y-8">
                 <div className="inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-                  ✨ Votre partenaire de confiance depuis 2016
+                  ✨ Maison fondée en 2016
                 </div>
                 <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-                  Nettoyage & Service de Conciergerie
+                  Nettoyage & Service de conciergerie, version Premium
                 </h1>
                 <p className="text-lg text-muted-foreground">
-                  Premium Solution vous offre des services professionnels de nettoyage pour votre maison, 
-                  votre entreprise et des prestations de conciergerie adaptées à tous vos besoins.
+                  Premium Solution signe des prestations de nettoyage et de conciergerie haut de gamme pour résidences, régies et entreprises. Interventions discrètes, standards élevés, résultats mesurables.
                 </p>
                 <div className="flex flex-col gap-4 sm:flex-row">
                   <Link href="/contact">
@@ -117,8 +116,7 @@ export default function Home() {
                 Nos services spécialisés
               </h2>
               <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-                À travers sa large gamme de services, Premium Solution vous propose une solution 
-                pour tous vos besoins et pour tous types de textiles.
+                Une palette complète, pensée pour des intérieurs soignés, des espaces communs impeccables et des bureaux irréprochables — avec une attention particulière aux finitions.
               </p>
             </div>
 

@@ -35,7 +35,7 @@ export default function Header() {
                 Premium Solution
               </div>
               <div className="text-xs text-muted-foreground">
-                Nettoyage & Conciergerie
+                Nettoyage & Conciergerie – Service Signature
               </div>
             </div>
           </a>
@@ -60,10 +60,10 @@ export default function Header() {
 
         {/* CTA Buttons */}
         <div className="hidden items-center space-x-4 md:flex">
-          <a href="tel:+41766074682" className="flex items-center space-x-2">
+          <a href="tel:+41766074692" className="flex items-center space-x-2">
             <Button variant="outline" size="sm">
               <Phone className="mr-2 h-4 w-4" />
-              +41 76 607 46 82
+              +41 76 607 46 92
             </Button>
           </a>
           <Link href="/contact">
