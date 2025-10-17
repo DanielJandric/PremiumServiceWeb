@@ -178,9 +178,11 @@ export default function InternalChat() {
 												<a className="text-primary hover:underline">Voir les documents →</a>
 											</Link>
 										</div>
-									</div>
+										</div>
+										{/* close first grid */}
+										</div>
 
-									<div className="grid gap-4 md:grid-cols-2">
+										<div className="grid gap-4 md:grid-cols-2">
 										<div className="space-y-3">
 											<div className="text-sm font-medium">Client</div>
 											<input
@@ -264,6 +266,7 @@ export default function InternalChat() {
 											{items.length === 0 && (
 												<div className="text-sm text-muted-foreground">Aucun service pour l’instant.</div>
 											)}
+										</div>
 										</div>
 									</div>
 
