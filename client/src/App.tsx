@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import InternalChat from "./pages/InternalChat";
+import InternalDocuments from "./pages/InternalDocuments";
 
 function Router() {
   return (
@@ -16,6 +18,8 @@ function Router() {
       <Route path={"/services"} component={Services} />
       <Route path={"/a-propos"} component={About} />
       <Route path={"/contact"} component={Contact} />
+      <Route path={"/internal/chat"} component={InternalChat} />
+      <Route path={"/internal/documents"} component={InternalDocuments} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
