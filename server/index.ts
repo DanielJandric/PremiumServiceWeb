@@ -35,35 +35,30 @@ async function startServer() {
   // Proxy /api to CHAT_API_URL (protected)
   const CHAT_API_URL = process.env.CHAT_API_URL;
   if (CHAT_API_URL) {
-    // Explicit proxy for chat endpoint to avoid any path ambiguity
+    // Explicit proxy for chat endpoint
     app.use(
       "/api/openai",
-      basicAuth,
       createProxyMiddleware({
         target: CHAT_API_URL,
         changeOrigin: true,
         proxyTimeout: 120000,
-        pathRewrite: { "^/api/openai$": "/api/openai" },
       })
     );
 
+    // General API proxy (no auth to avoid double challenges in XHR)
     app.use(
       "/api",
-      basicAuth,
       createProxyMiddleware({
         target: CHAT_API_URL,
         changeOrigin: true,
         ws: true,
-        // Preserve /api prefix to match backend routes
-        // pathRewrite: { "^/api": "/api" },
         proxyTimeout: 120000,
       })
     );
 
-    // Proxy template assets used by PDF renderer (and similar)
+    // Proxy template assets used by PDF renderer
     app.use(
       "/template",
-      basicAuth,
       createProxyMiddleware({
         target: CHAT_API_URL,
         changeOrigin: true,
