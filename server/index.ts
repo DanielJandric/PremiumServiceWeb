@@ -18,15 +18,21 @@ async function startServer() {
 
   app.use(express.static(staticPath));
 
+  // Health check endpoint for platforms like Render
+  app.get("/health", (_req, res) => {
+    res.status(200).send("OK");
+  });
+
   // Handle client-side routing - serve index.html for all routes
   app.get("*", (_req, res) => {
     res.sendFile(path.join(staticPath, "index.html"));
   });
 
-  const port = process.env.PORT || 3000;
+  const port = Number(process.env.PORT) || 3000;
+  const host = "0.0.0.0";
 
-  server.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}/`);
+  server.listen(port, host, () => {
+    console.log(`Server running on http://${host}:${port}/`);
   });
 }
 
